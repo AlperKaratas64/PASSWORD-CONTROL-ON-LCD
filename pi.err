@@ -1,0 +1,4 @@
+>>> Warning 230 "pi.c" Line 35(41,42): String truncated
+      Memory usage:   ROM=6%      RAM=17% - 18%
+      0 Errors,  1 Warnings.
+Build Successful.
