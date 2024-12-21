@@ -1,69 +1,79 @@
 # PASSWORD-CONTROL-ON-LCD
-EQUIPMENT USED IN THE CIRCUIT:
-PIC16F877
-4x3 KEYPAD-PHONE
-16x2 LCD LM016L
-TRANSISTOR 2N2222A
-5V RELAY RLY-SPCO
-RESISTOR
-POTENTIOMETER
-POWER-GROUND
-PIC16F877:
-Out of the 40 pins of the PIC16F877, 33 are I/O (input/output) pins. The PIC16F877 features five ports: a 6-bit A port, three 8-bit ports (B, C, and D), and a 3-bit E port.
 
-Features of PIC16F877:
-It supports indirect and relative addressing modes.
-With CMOS Flash EEPROM technology, it achieves high speed with low power consumption.
-It includes 8K words of Flash ROM program memory (EEPROM-enabled), 368 bytes of user RAM memory, and 256 bytes of EEPROM memory, comprising three memory blocks.
-It supports low-voltage programming.
-It is in-circuit serial programmable with just a 5V input.
-It can be programmed using 2 pins.
-Program memory can be accessed for read/write operations.
-It operates within a wide voltage range of 2.0V to 5.0V.
-KEYPAD-PHONE:
-The keypad is a system for data collection and analysis. It accelerates processes such as receiving responses, providing feedback, and confirming within group activities.
+This project implements a password control system using a PIC16F877 microcontroller. The system verifies passwords entered through a keypad and displays the results on an LCD screen. It incorporates a variety of components to ensure accurate operation and efficient performance.
 
-How the Keypad System Works:
-Operates via radio frequencies and is wireless.
-Predefined questions are input into the system.
-During events, these questions are asked to participants at the appropriate time.
-Participants respond to the questions by pressing keys.
-Responses are displayed on the screen in a graphical format within three seconds.
-LCD LM016L:
-LCD (Liquid Crystal Display) is a display technology based on the principle of electrically polarized liquid allowing light to pass in a single phase, making it visible when combined with a polarization filter.
+## 📋 Equipment Used
 
-TRANSISTOR 2N2222A:
-A transistor is a semiconductor device used to amplify or switch small electrical signals. It has three or more terminals, and applying a signal to one terminal controls the current flow between the other two.
-PN2222 is a low-power silicon transistor designed for switching and linear amplification applications. The 2N2222A is commonly used in household appliances, educational projects, and hobby electronics.
+- **PIC16F877**: Microcontroller.
+- **4x3 KEYPAD-PHONE**: Input device for entering passwords.
+- **16x2 LCD LM016L**: Display device for output.
+- **TRANSISTOR 2N2222A**: For switching and amplification.
+- **5V RELAY RLY-SPCO**: Used for controlling connected devices.
+- **RESISTOR**: For current regulation.
+- **POTENTIOMETER**: For adjustable resistance.
+- **POWER-GROUND**: Power management and grounding.
 
-Applications of 2N2222A:
-Switching loads with high current (up to 800mA).
-Various switching applications.
-Motor speed control.
-Inverter and rectifier circuits.
-Darlington Pair.
-RELAY RLY-SPCO:
-A relay is a circuit element used to switch high-current devices with low currents.
+## ⚙️ PIC16F877 Features
 
-Operating Principle:
-When the relay coil is energized, the coil magnetizes and moves an armature, causing the contacts to touch each other and enable conduction in the circuit.
+- 40 pins with 33 I/O (input/output) pins.
+- Five ports: A (6-bit), B/C/D (8-bit each), and E (3-bit).
+- Indirect and relative addressing modes.
+- 8K words of Flash ROM program memory (EEPROM-enabled).
+- 368 bytes of user RAM memory and 256 bytes of EEPROM memory.
+- Low-voltage programming support.
+- Wide operating voltage range: 2.0V to 5.0V.
 
-RESISTOR:
-A resistor is a passive electronic component used in circuits to limit or regulate electric current, adjust signal levels, divide voltage, and other applications.
+## 🛠️ Key Components and Their Functions
 
-POTENTIOMETER:
-A potentiometer is a three-terminal resistive device that acts as a voltage divider, providing a continuously variable output voltage signal proportional to the physical position along its shaft. Its primary feature is adjustable resistance.
+### **KEYPAD-PHONE**
+- Used for entering passwords.
+- Operates via wireless radio frequencies.
+- Responds to predefined questions/events in real-time.
+- Displays responses in a graphical format.
 
-POWER:
-Power supplies provide the necessary DC voltages required for the operation of various electronic components.
+### **LCD LM016L**
+- Liquid Crystal Display technology.
+- Displays polarized light visible to the user.
 
-GROUND:
-In electrical and electronic circuits, ground provides a common return path to the power source and completes the circuit. It is used in both AC systems (phase, neutral, and ground) and DC systems (positive, negative, and ground).
+### **TRANSISTOR 2N2222A**
+- Amplifies or switches electrical signals.
+- Commonly used in educational and hobby electronics.
+- Handles high-current loads (up to 800mA).
 
-WORKING PRINCIPLE OF THE PROJECT:
-The KEYPAD-PHONE is used to verify the passwords we define. Entered passwords are stored in the EEPROM. When passwords of three or more characters are entered via the keypad, they are verified. Passwords are displayed on the LCD, where their correctness is checked. The KEYPAD characters are defined as A, B, C, D, and 1, 2, 3.
+### **RELAY RLY-SPCO**
+- Switches high-current devices with low currents.
+- Energized coil moves an armature to enable circuit conduction.
 
-Functionality of Keys:
-“*” Key: This key starts the system. When the system is ON, the controller scans only for this key. Pressing this key allows you to enter the password for the lock system.
-“#” Key: Once you are done using the lock system, you press this key to turn off the system and the relay.
-Remaining Keys: These are used to input character values to the microcontroller, which then analyzes these characters. Based on predefined passwords in the controller, it matches the input and determines whether the password entered is correct or incorrect.
+### **RESISTOR & POTENTIOMETER**
+- **Resistor:** Limits/regulates current in the circuit.
+- **Potentiometer:** Acts as a variable voltage divider.
+
+### **POWER AND GROUND**
+- Provides necessary DC voltages for components.
+- Ensures a complete circuit and safe return path.
+
+## 🚀 Working Principle
+
+1. **Password Entry**: Users enter passwords through the keypad. These passwords are stored in the EEPROM.
+2. **Verification**: When passwords of three or more characters are entered, they are verified by the system.
+3. **Display**: Verified passwords are displayed on the LCD screen, indicating whether they are correct or incorrect.
+4. **Key Functions**:
+   - **`*` Key**: Starts the system and allows password entry.
+   - **`#` Key**: Ends the session and turns off the relay.
+   - **Other Keys**: Enter characters for password matching.
+
+## 🔧 Applications
+
+- Secure access control systems.
+- Educational demonstration for microcontroller-based projects.
+- Hobby electronics for password-based locks.
+
+## 📝 Future Enhancements
+
+1. **Enhanced Security**: Add encryption for password storage.
+2. **Multi-User Support**: Enable different passwords for multiple users.
+3. **Wireless Control**: Integrate with Bluetooth or Wi-Fi for remote operation.
+
+---
+**Prepared By:** Ayşegül  
+For detailed project information, refer to the [GitHub Repository](#).
